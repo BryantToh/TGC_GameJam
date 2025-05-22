@@ -15,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpPressed;
 
     private Rigidbody2D rb;
+    private PlayerAnimationController playerAnim;
     private bool isFacingRight = true;
 
     
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<PlayerAnimationController>();
     }
 
     public void UpdateTransform()
@@ -44,6 +46,15 @@ public class PlayerMovement : MonoBehaviour
             FlipX();
         else if (!isFacingRight && horizontal > 0)
             FlipX();
+
+        if (Mathf.Abs(horizontal) > 0.1f)
+        {
+            playerAnim.SetRunning(true);
+        }
+        else
+        {
+            playerAnim.SetRunning(false);
+        }
     }
 
     private bool IsGrounded() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
