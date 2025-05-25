@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump Var")]
     public float jumpPower;
     public float gravityMultiplier;
+    public float staminaCostPerJump = 10f;
     private bool isJumpPressed;
     private int jumpCount = 0;
     private int maxJumpCount = 2;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerAnimationController playerAnim;
+    private PlayerStatus playerStatus;
     private bool isFacingRight = true;
 
     
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnimationController>();
+        playerStatus = GetComponent<PlayerStatus>();
     }
 
     public void UpdateTransform()
@@ -94,13 +97,14 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Jump(InputAction.CallbackContext context)
     {
-        if (jumpCount < maxJumpCount)
+        if (jumpCount < maxJumpCount && playerStatus.GetCurrentStamina() >= staminaCostPerJump)
         {
             if (context.performed)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 isJumpPressed = true;
                 jumpCount++;
+                playerStatus.UseStamina(staminaCostPerJump);
             }
             // Check if button is half pressed
             else if (context.canceled)
