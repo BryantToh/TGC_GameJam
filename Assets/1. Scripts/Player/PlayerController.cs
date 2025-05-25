@@ -13,4 +13,15 @@ public class PlayerController : MonoBehaviour
     {
         m_playerMovement.UpdateTransform();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Entity entity = collision.GetComponent<Entity>();
+
+        if (entity != null)
+        {
+            entity.DealDamage(GetComponent<PlayerStatus>());
+            Debug.Log("Entity detected");
+        }
+    }
 }

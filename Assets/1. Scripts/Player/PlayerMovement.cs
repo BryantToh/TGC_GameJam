@@ -3,12 +3,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("PlayerInput")]
+    public InputSO playerInput;
+
     [Header("Movement Var")]
     public float movementSpeed;
+    public float sprintSpeed = 7f;
     private float horizontal;
 
     [Header("Jump Var")]
-    public float jumpPower;
+    public float jumpPower = 8f;
     public float gravityMultiplier;
     public float staminaCostPerJump = 10f;
     private bool isJumpPressed;
@@ -24,8 +28,15 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask wallLayer;
 
     [Header("Wall Action Var")]
-    private float wallSlideSpeed = 7f;
+    public float wallSlideSpeed = 7f;
     private bool isWallSlide = false;
+
+    [Header("Wall Jump")]
+    private bool isWallJump = false;
+    private float wallJumpDir;
+    float wallJumpTime = .5f;
+    float wallJumpTimer;
+    public Vector2 wallJumpPower = new Vector2(5f, 8f);
 
     private Rigidbody2D rb;
     private PlayerAnimationController playerAnim;
@@ -42,7 +53,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateTransform()
     {
-        rb.linearVelocity = new Vector2(horizontal * movementSpeed, rb.linearVelocity.y);
+        float currentSpeed = movementSpeed;
+
+        if (horizontal != 0 && playerInput.IsKeyPressed(playerInput.sprintKey))
+        {
+            currentSpeed += sprintSpeed;
+        }
+
+        rb.linearVelocity = new Vector2(horizontal * currentSpeed, rb.linearVelocity.y);
+        FlipX();
 
         if (rb.linearVelocity.y < 0)
             rb.gravityScale = gravityMultiplier;
@@ -55,19 +74,13 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
             jumpCount = 0;
 
-
-        // Set sprite facing direction
-        if (isFacingRight && horizontal < 0)
-            FlipX();
-        else if (!isFacingRight && horizontal > 0)
-            FlipX();
-
         if (Mathf.Abs(horizontal) > 0.1f)
             playerAnim.SetRunning(true);
         else
             playerAnim.SetRunning(false);
-        
+
         WallSlide();
+        WallJump();
     }
         
     private bool IsGrounded() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
@@ -75,13 +88,15 @@ public class PlayerMovement : MonoBehaviour
     private bool IsOnWall() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     private void FlipX()
     {
-        isFacingRight = !isFacingRight;
-        Vector2 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
-
+        if (isFacingRight && horizontal < 0 || !isFacingRight && horizontal > 0)
+        {
+            isFacingRight = !isFacingRight;
+            Vector2 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+        
     }
-
     
     private void WallSlide()
     {
@@ -95,9 +110,30 @@ public class PlayerMovement : MonoBehaviour
             isWallSlide = false;
         }
     }
+
+    private void WallJump()
+    {
+        if (isWallSlide)
+        {
+            isWallJump = false;
+            wallJumpDir = -transform.localScale.x;
+            wallJumpTimer = wallJumpTime;
+
+            CancelInvoke(nameof(CancelWallJump));
+        }
+        else if(wallJumpTimer > 0f)
+        {
+            wallJumpTimer -= Time.deltaTime;
+        }
+    }
+
+    private void CancelWallJump()
+    {
+        isWallJump = false;
+    }
     public void Jump(InputAction.CallbackContext context)
     {
-        if (jumpCount < maxJumpCount && playerStatus.GetCurrentStamina() >= staminaCostPerJump)
+        if (jumpCount < maxJumpCount/* && playerStatus.GetCurrentStamina() >= staminaCostPerJump*/)
         {
             if (context.performed)
             {
@@ -105,6 +141,8 @@ public class PlayerMovement : MonoBehaviour
                 isJumpPressed = true;
                 jumpCount++;
                 playerStatus.UseStamina(staminaCostPerJump);
+
+                playerAnim.TriggerJump();
             }
             // Check if button is half pressed
             else if (context.canceled)
@@ -113,6 +151,24 @@ public class PlayerMovement : MonoBehaviour
                 isJumpPressed = false;
                 jumpCount++;
             }
+        }
+
+        // Wall jumo    
+        if (context.performed && wallJumpTimer > 0f)
+        {
+            isWallJump = true;
+            rb.linearVelocity = new Vector2(wallJumpDir * wallJumpPower.x, wallJumpPower.y);
+
+            if (transform.localScale.x != wallJumpDir)
+            {
+                isFacingRight = !isFacingRight;
+                Vector2 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+
+
+            Invoke(nameof(CancelWallJump), wallJumpTime + 0.1f);
         }
         
     }
