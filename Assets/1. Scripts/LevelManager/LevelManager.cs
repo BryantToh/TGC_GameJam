@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private int levelIndex = 0;
-    //[SerializeField] GameObject playerSpawnPoint;
     private GameObject currentLevel;
     public static LevelManager Instance;
     [SerializeField] List<LevelSO> levelPrefabs = new List<LevelSO>();
@@ -31,8 +30,6 @@ public class LevelManager : MonoBehaviour
             levelIndex++;
             if (levelIndex < levelPrefabs.Count)
                 ActiveLevelPrefab(levelIndex);
-            //Make player spawn
-            //player.transform. = playerspawnpoint.transform
             resetVariables();
         }
         else
@@ -40,10 +37,13 @@ public class LevelManager : MonoBehaviour
             return;
         }
     }
+    public int GetCurrLevel()
+    {
+        return levelIndex;
+    }
     private bool LevelTasksCompleted()
     {
-        if (levelPrefabs[levelIndex].task1 == 1 && levelPrefabs[levelIndex].task2 == 1
-            && levelPrefabs[levelIndex].task3 == 1)
+        if (levelPrefabs[levelIndex].Tasks == 3)
             return true;
         else
             return false;
@@ -69,9 +69,7 @@ public class LevelManager : MonoBehaviour
 
     private void resetVariables()
     {
-        levelPrefabs[levelIndex].task1 = 0;
-        levelPrefabs[levelIndex].task2 = 0;
-        levelPrefabs[levelIndex].task3 = 0;
+        levelPrefabs[levelIndex].Tasks = 0;
         LevelTasksCompleted();
     }
 }
