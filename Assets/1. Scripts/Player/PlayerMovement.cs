@@ -43,19 +43,17 @@ public class PlayerMovement : MonoBehaviour
     private PlayerStatus playerStatus;
     private bool isFacingRight = true;
 
-    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnimationController>();
         playerStatus = GetComponent<PlayerStatus>();
     }
-
-    public void UpdateTransform()
+    public void FrameUpdate()
     {
         float currentSpeed = movementSpeed;
 
-        if (horizontal != 0 && playerInput.IsKeyPressed(playerInput.sprintKey))
+        if (horizontal != 0 && playerInput.GetKey(playerInput.sprintKey))
         {
             currentSpeed += sprintSpeed;
         }
@@ -79,13 +77,12 @@ public class PlayerMovement : MonoBehaviour
         else
             playerAnim.SetRunning(false);
 
+
+        
+
         WallSlide();
         WallJump();
     }
-        
-    private bool IsGrounded() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    
-    private bool IsOnWall() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     private void FlipX()
     {
         if (isFacingRight && horizontal < 0 || !isFacingRight && horizontal > 0)
@@ -97,20 +94,27 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    
+    private void CancelWallJump()
+    {
+        isWallJump = false;
+    }
     private void WallSlide()
     {
         if (!IsGrounded() && IsOnWall() && horizontal != 0)
         {
             isWallSlide = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallSlideSpeed);
+            isFacingRight = !isFacingRight;
+            Vector2 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
         else
         {
             isWallSlide = false;
         }
+        playerAnim.SetWallSlide(isWallSlide);
     }
-
     private void WallJump()
     {
         if (isWallSlide)
@@ -126,11 +130,8 @@ public class PlayerMovement : MonoBehaviour
             wallJumpTimer -= Time.deltaTime;
         }
     }
-
-    private void CancelWallJump()
-    {
-        isWallJump = false;
-    }
+    private bool IsGrounded() => Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    private bool IsOnWall() => Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     public void Jump(InputAction.CallbackContext context)
     {
         if (jumpCount < maxJumpCount/* && playerStatus.GetCurrentStamina() >= staminaCostPerJump*/)
@@ -153,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // Wall jumo    
+        // Wall jump
         if (context.performed && wallJumpTimer > 0f)
         {
             isWallJump = true;

@@ -14,6 +14,10 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("isRunning", isRunning);
     }
 
+    public void SetWallSlide(bool isWallSlide)
+    {
+        animator.SetBool("isWallSlide", isWallSlide);
+    }
     public void TriggerJump()
     {
         animator.ResetTrigger("onJump");

@@ -1,13 +1,14 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager Instance;
+
     private int levelIndex = 0;
     private GameObject currentLevel;
-    public static LevelManager Instance;
     [SerializeField] List<LevelSO> levelPrefabs = new List<LevelSO>();
+    [SerializeField] MemorySO memorySO;
     private void Awake()
     {
         if (Instance == null)
@@ -22,8 +23,8 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        if (!LevelTasksCompleted())
-            return;
+        //if (!LevelTasksCompleted())
+        //    return;
 
         if (levelIndex < levelPrefabs.Count && levelPrefabs[levelIndex].levelCompleted)
         {
@@ -33,9 +34,7 @@ public class LevelManager : MonoBehaviour
             resetVariables();
         }
         else
-        {
             return;
-        }
     }
     public int GetCurrLevel()
     {
@@ -43,12 +42,13 @@ public class LevelManager : MonoBehaviour
     }
     private bool LevelTasksCompleted()
     {
-        if (levelPrefabs[levelIndex].Tasks == 3)
-            return true;
-        else
-            return false;
+        //if (levelPrefabs[levelIndex].Tasks == 3)
+        //    return true;
+        //else
+        //    return false;
+        return false;
     }
-    public bool LevelCompletion()
+    public bool IsLevelCompleted()
     {
         return levelPrefabs[levelIndex].levelCompleted;
     }
@@ -69,7 +69,11 @@ public class LevelManager : MonoBehaviour
 
     private void resetVariables()
     {
-        levelPrefabs[levelIndex].Tasks = 0;
+        //levelPrefabs[levelIndex].Tasks = 0;
+        
         LevelTasksCompleted();
     }
+
+    // Testing
+    public MemorySO GetMemory() => memorySO;
 }
