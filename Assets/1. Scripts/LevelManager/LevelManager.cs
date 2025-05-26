@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     private int levelIndex = 0;
     private GameObject currentLevel;
     [SerializeField] List<LevelSO> levelPrefabs = new List<LevelSO>();
-    [SerializeField] MemorySO memorySO;
+    [SerializeField] List<MemorySO> listOfMemory = new List<MemorySO>();
     private void Awake()
     {
         if (Instance == null)
@@ -75,5 +75,5 @@ public class LevelManager : MonoBehaviour
     }
 
     // Testing
-    public MemorySO GetMemory() => memorySO;
+    public MemorySO GetMemory() => listOfMemory[levelIndex];
 }
