@@ -19,6 +19,10 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < listOfMemory.Count; i++)
+        {
+            listOfMemory[i].Reset();
+        }
         ActiveLevelPrefab(levelIndex);
     }
     public void LoadNextLevel()
@@ -73,7 +77,5 @@ public class LevelManager : MonoBehaviour
         
         LevelTasksCompleted();
     }
-
-    // Testing
     public MemorySO GetMemory() => listOfMemory[levelIndex];
 }
