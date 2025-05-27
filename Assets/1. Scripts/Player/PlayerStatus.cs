@@ -56,7 +56,6 @@ public class PlayerStatus : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, stats.maxHealth);
         onHealthChanged?.Invoke(currentHealth, stats.maxHealth);
-
         if (currentHealth <= 0)
             Die();
     }
