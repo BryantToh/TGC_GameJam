@@ -73,7 +73,6 @@ public class LevelManager : MonoBehaviour
         
         LevelTasksCompleted();
     }
-
-    // Testing
+   
     public MemorySO GetMemory() => listOfMemory[levelIndex];
 }
