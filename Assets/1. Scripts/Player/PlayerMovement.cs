@@ -41,21 +41,16 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerAnimationController playerAnim;
     private PlayerStatus playerStatus;
-    private Obstacles obstacles;
     private bool isFacingRight = true;
 
     private void Start()
     {
-        obstacles = GameObject.FindGameObjectWithTag("Obstacles").GetComponent<Obstacles>();
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnimationController>();
         playerStatus = GetComponent<PlayerStatus>();
     }
     public void FrameUpdate()
     {
-        if (obstacles.isKnockedBack)
-            return;
-
         float currentSpeed = movementSpeed;
 
         if (horizontal != 0 && playerInput.GetKey(playerInput.sprintKey))

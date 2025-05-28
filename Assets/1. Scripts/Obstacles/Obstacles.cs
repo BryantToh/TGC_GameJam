@@ -1,12 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Obstacles : MonoBehaviour
+public class Obstacles : Entity
 {
-    [SerializeField] int objDmg;
-    private float knockbackForce = 50f;
-    private float knockbackDuration = 0.15f;
-    public bool isKnockedBack = false;
     private Vector2 obstaclePos;
     private GameObject player;
     private Rigidbody2D rb;
@@ -23,28 +19,8 @@ public class Obstacles : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            DealDmg();
+            ApplyKnockBack(rb, obstaclePos);
+            DealDamage(status);
         }
-    }
-    private void DealDmg()
-    {
-        ApplyKnockBack();
-        status.TakeDamage(objDmg);
-    }
-    private void ApplyKnockBack()
-    {
-        if (isKnockedBack)
-            return;
-
-        isKnockedBack = true;
-        Vector2 knockbackDirection = (rb.position - obstaclePos).normalized;
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-        StartCoroutine(EndKnockback());
-    }
-    private IEnumerator EndKnockback()
-    {
-        yield return new WaitForSeconds(knockbackDuration);
-        isKnockedBack = false;
     }
 }

@@ -138,19 +138,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 34
-        height: 61
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 32574fdcacb3f8550800000000000000
-      internalID: 6165212157118280995
+      spriteID: a565cae764a482c4a9a813a9a1046a2e
+      internalID: 804164316
       vertices: []
       indices: 
       edges: []
@@ -159,20 +159,20 @@ TextureImporter:
       name: bacteria1_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 2
-        width: 34
-        height: 61
+        x: 32
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e74aee8eba78c7070800000000000000
-      internalID: 8105502601777161342
+      spriteID: c2f432470c97c244cb6ac9e2dde5c126
+      internalID: 478409069
       vertices: []
       indices: 
       edges: []
@@ -181,20 +181,20 @@ TextureImporter:
       name: bacteria1_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 2
-        width: 35
-        height: 60
+        x: 64
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1d4cb5b550ae385e0800000000000000
-      internalID: -1908424508346481455
+      spriteID: 417afad79a055074d920e177d1075259
+      internalID: 267703513
       vertices: []
       indices: 
       edges: []
@@ -203,20 +203,20 @@ TextureImporter:
       name: bacteria1_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 95
-        y: 2
-        width: 34
-        height: 61
+        x: 96
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e23b27d1dabb22e0800000000000000
-      internalID: -2149418986718416153
+      spriteID: 79377dfb45c0a414cadd7ca555186c78
+      internalID: 2146779654
       vertices: []
       indices: 
       edges: []
@@ -225,20 +225,20 @@ TextureImporter:
       name: bacteria1_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 127
-        y: 1
-        width: 34
-        height: 62
+        x: 128
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1fa00dd44fac4b230800000000000000
-      internalID: 3653768348330625777
+      spriteID: 61d1c32ddeebd874a9701c8b9567c606
+      internalID: -1572189392
       vertices: []
       indices: 
       edges: []
@@ -249,7 +249,7 @@ TextureImporter:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 33
+        width: 32
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9268f57f8c3d94af0800000000000000
-      internalID: -411565030830537175
+      spriteID: 412b17168f97b2c40b3c2dce726bf752
+      internalID: 622995307
       vertices: []
       indices: 
       edges: []
@@ -269,20 +269,20 @@ TextureImporter:
       name: bacteria1_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 191
+        x: 192
         y: 0
-        width: 34
-        height: 62
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eb3a71fa220c6a4a0800000000000000
-      internalID: -6582362550156418114
+      spriteID: 66e66936f99d0ce4798f3173f6decc07
+      internalID: -1428939635
       vertices: []
       indices: 
       edges: []
@@ -301,10 +301,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d1b6e9ee558721d30800000000000000
-      internalID: 4400712096365308701
+      spriteID: 6e604fc34037c76408af2b403456b0a7
+      internalID: -26644487
       vertices: []
       indices: 
       edges: []
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cb3adb8114e270b4499e18382b80c029
     internalID: 0
     vertices: []
     indices: 
@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bacteria1_spritesheet_0: 804164316
+      bacteria1_spritesheet_1: 478409069
+      bacteria1_spritesheet_2: 267703513
+      bacteria1_spritesheet_3: 2146779654
+      bacteria1_spritesheet_4: -1572189392
+      bacteria1_spritesheet_5: 622995307
+      bacteria1_spritesheet_6: -1428939635
+      bacteria1_spritesheet_7: -26644487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
