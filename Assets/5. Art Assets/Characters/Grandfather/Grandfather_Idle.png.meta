@@ -310,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grandfather_Idle_0: -8663533621258940414
+      Grandfather_Idle_1: -8951059073111851366
+      Grandfather_Idle_2: 8808102454005052025
+      Grandfather_Idle_3: -6157215047224229722
+      Grandfather_Idle_4: 3084049170759384560
+      Grandfather_Idle_5: 8307052282874047697
+      Grandfather_Idle_6: 7877790582139441279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
