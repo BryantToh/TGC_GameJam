@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3597504428b6d474a994e791050eedad
+guid: 5cfa8988f15513445ae06f764589b734
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7444997087751626728
-    second: turbulent_sky_0
+      213: 7566585986538846926
+    second: redHouse_background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: turbulent_sky_0
+      name: redHouse_background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1104
-        height: 620
+        width: 215
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8102fbe089e0ea890800000000000000
-      internalID: -7444997087751626728
+      spriteID: ecab8128dd9e10960800000000000000
+      internalID: 7566585986538846926
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      turbulent_sky_0: -7444997087751626728
+      redHouse_background_0: 7566585986538846926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
