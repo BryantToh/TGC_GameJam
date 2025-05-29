@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3597504428b6d474a994e791050eedad
+guid: fe268b0b75409d94d9b295d4e2d91f60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7444997087751626728
-    second: turbulent_sky_0
+      213: -1962735481753338155
+    second: bench_tilemap_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: turbulent_sky_0
+      name: bench_tilemap_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1104
-        height: 620
+        width: 96
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8102fbe089e0ea890800000000000000
-      internalID: -7444997087751626728
+      spriteID: 5de79067a76f2c4e0800000000000000
+      internalID: -1962735481753338155
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      turbulent_sky_0: -7444997087751626728
+      bench_tilemap_0: -1962735481753338155
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

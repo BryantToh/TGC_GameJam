@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3597504428b6d474a994e791050eedad
+guid: f715226f3b35a404a851d8d9483495b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7444997087751626728
-    second: turbulent_sky_0
+      213: -3306374663655637884
+    second: swingTree_background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: turbulent_sky_0
+      name: swingTree_background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1104
-        height: 620
+        width: 126
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8102fbe089e0ea890800000000000000
-      internalID: -7444997087751626728
+      spriteID: 48c3476e2c56d12d0800000000000000
+      internalID: -3306374663655637884
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      turbulent_sky_0: -7444997087751626728
+      swingTree_background_0: -3306374663655637884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
