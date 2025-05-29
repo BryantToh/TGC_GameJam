@@ -1352,6 +1352,11 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.875, y: 1.7}
   m_Direction: 0
+--- !u!4 &1117064144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 822339487767804557, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+  m_PrefabInstance: {fileID: 493030507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1184055750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1868,6 +1873,26 @@ PrefabInstance:
     - target: {fileID: 3509296695235599125, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_Name
       value: ==CAMERA==
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523913713517868858, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 1117064144}
+    - target: {fileID: 6538441293503619449, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.096944
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538441293503619449, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9498067
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959709610706721223, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.096944
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959709610706721223, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9498067
       objectReference: {fileID: 0}
     - target: {fileID: 8913984111642127211, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_LocalPosition.x
