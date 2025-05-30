@@ -5,9 +5,9 @@ public class Cannon : Entity
     [SerializeField] Projectile projectile;
     [SerializeField] GameObject player;
     [SerializeField] Transform spawnPoint;
-    private PlayerStatus status;
-    private Rigidbody2D rb;
-    private Vector2 obstaclePos;
+    //private PlayerStatus status;
+    //private Rigidbody2D rb;
+    //private Vector2 obstaclePos;
     bool inRange = false;
     float timer = 2f;
     float time = 0f;
@@ -15,8 +15,8 @@ public class Cannon : Entity
     {
         time = timer;
         player = GameObject.FindGameObjectWithTag("Player");
-        status = player.GetComponent<PlayerStatus>();
-        obstaclePos = new Vector2(transform.position.x, transform.position.y);
+        //status = player.GetComponent<PlayerStatus>();
+        //obstaclePos = new Vector2(transform.position.x, transform.position.y);
     }
 
     void Update()
