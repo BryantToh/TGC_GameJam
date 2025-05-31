@@ -10,11 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public float sprintSpeed = 7f;
     private float horizontal;
+    public float staminaCostPerSecond = 10f;
 
     [Header("Jump Var")]
     public float jumpPower = 8f;
     public float gravityMultiplier;
-    public float staminaCostPerJump = 10f;
     private bool isJumpPressed;
     private int jumpCount = 0;
     private int maxJumpCount = 2;
@@ -52,10 +52,25 @@ public class PlayerMovement : MonoBehaviour
     public void FrameUpdate()
     {
         float currentSpeed = movementSpeed;
+        bool wantsToSprint = playerInput.GetKey(playerInput.sprintKey);
+        bool canSprint = playerStatus.GetCurrentStamina() > 0.1;
 
-        if (horizontal != 0 && playerInput.GetKey(playerInput.sprintKey))
+        if (horizontal != 0 && wantsToSprint)
         {
-            currentSpeed += sprintSpeed;
+            if (canSprint)
+            {
+                currentSpeed += sprintSpeed;
+                playerStatus.UseStamina(staminaCostPerSecond * Time.deltaTime);
+                playerStatus.SetSprinting(true);
+            }
+            else
+            {
+                playerStatus.SetSprinting(false);
+            }
+        }
+        else
+        {
+            playerStatus.SetSprinting(false);
         }
 
         rb.linearVelocity = new Vector2(horizontal * currentSpeed, rb.linearVelocity.y);
@@ -141,8 +156,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 isJumpPressed = true;
                 jumpCount++;
-                playerStatus.UseStamina(staminaCostPerJump);
-
                 playerAnim.TriggerJump();
             }
             // Check if button is half pressed

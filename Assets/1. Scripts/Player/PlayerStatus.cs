@@ -14,6 +14,18 @@ public class PlayerStatus : MonoBehaviour
     private float lastStaminaUseTime; // Track the time when stamina was last used
     public float staminaRegenDelay = 2f; // Delay before starting regen after exhaustion
 
+    private bool isSprinting;
+
+    public void SetSprinting(bool sprinting)
+    {
+        isSprinting = sprinting;
+    }
+
+    public bool IsSprinting()
+    {
+        return isSprinting;
+    }
+
     private void Awake()
     {
         stats = GetComponent<PlayerStats>();
