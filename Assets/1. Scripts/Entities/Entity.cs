@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour
 {
     public int damage = 10;
-    private float knockbackForce = 50f;
+    private float knockbackForce = 5f;
     private float knockbackDuration = 0.15f;
     public bool isKnockedBack = false;
 
@@ -27,6 +27,7 @@ public abstract class Entity : MonoBehaviour
         rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
         StartCoroutine(EndKnockback());
     }
+
     private IEnumerator EndKnockback()
     {
         yield return new WaitForSeconds(knockbackDuration);
