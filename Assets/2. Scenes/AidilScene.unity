@@ -842,16 +842,24 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
     - target: {fileID: 6265835544438846324, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: levelPrefabs.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265835544438846324, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: listOfMemory.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6265835544438846324, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 9883719e3efc1eb4e9657ddcedb9c348, type: 2}
+      objectReference: {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
     - target: {fileID: 6265835544438846324, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: 238f0f6c0569b8e42855dc3bde40cc48, type: 2}
+    - target: {fileID: 6265835544438846324, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'listOfMemory.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
     - target: {fileID: 7726273820850047476, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1129,6 +1137,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: sprintSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: wallCheckPos
       value: 
       objectReference: {fileID: 549904940}
@@ -1185,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1911821588817263925, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: keyId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3246165414948197881, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
       propertyPath: m_Name
       value: Level_Football
@@ -1228,6 +1248,14 @@ PrefabInstance:
     - target: {fileID: 3316663896863956921, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002610936969460045, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: keyId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157910511769213723, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: keyId
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,44 +4,23 @@ public class PlayerAnimationController : MonoBehaviour
 {
     private Animator animator;
 
-    private int isRunningHash;
-    private int isWallSlideHash;
-    private int isWallJumpingHash;
-    private int onJumpHash;
-
     private void Start()
     {
         animator = GetComponent<Animator>();
-
-        // Cache animator parameter hashes for performance
-        isRunningHash = Animator.StringToHash("isRunning");
-        isWallSlideHash = Animator.StringToHash("isWallSlide");
-        isWallJumpingHash = Animator.StringToHash("isWallJumping");
-        onJumpHash = Animator.StringToHash("onJump");
     }
 
-    public void SetRunning(bool isRunning)
+    public void SetFloat(string anim, float value)
     {
-        animator.SetBool(isRunningHash, isRunning);
+        animator.SetFloat(anim, value);
     }
 
-    public void SetWallSlide(bool isWallSlide)
+    public void SetBool(string anim,bool isAnim)
     {
-        animator.SetBool(isWallSlideHash, isWallSlide);
-
-        // If wall slide ends, clear wall jump flag
-        if (!isWallSlide)
-            SetWallJumping(false);
+        animator.SetBool(anim,isAnim);
     }
 
-    public void SetWallJumping(bool isWallJumping)
+    public void SetTrigger(string anim)
     {
-        animator.SetBool(isWallJumpingHash, isWallJumping);
-    }
-
-    public void TriggerJump()
-    {
-        animator.ResetTrigger(onJumpHash);
-        animator.SetTrigger(onJumpHash);
+        animator.SetTrigger(anim);
     }
 }

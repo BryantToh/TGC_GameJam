@@ -47,12 +47,12 @@ public class PlayerMovementController : MonoBehaviour
     public float fallGravityMult = 2f;
 
     private Rigidbody2D rb;
-    
+    private Animator playerAnim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        playerAnim = GetComponent<Animator>();
     }
     public void FrameUpdate()
     {
@@ -62,25 +62,36 @@ public class PlayerMovementController : MonoBehaviour
         GroundCheck();
 
 
-        //float currentSpeed = moveSpeed;
+        float currentSpeed = moveSpeed;
 
-        //if (horizontalMovement != 0 && playerInput.GetKey(playerInput.sprintKey))
-        //{
-        //    currentSpeed += sprintSpeed;
-        //}
+        if (horizontalMovement != 0 && playerInput.GetKey(playerInput.sprintKey))
+        {
+            currentSpeed += sprintSpeed;
+        }
 
+        if (horizontalMovement != 0)
+        {
+            playerAnim.SetBool("IsWalk", true);
+        }
+        else
+        {
+            playerAnim.SetBool("IsWalk", false);
+        }
         if (!isWallJumping && !isWallSliding)
         {
             rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
             FlipX();
         }
 
-
+        playerAnim.SetFloat("yVelocity", rb.linearVelocity.y);
+      
+        playerAnim.SetBool("isWallSliding", isWallSliding);
     }
     
     public void Move(InputAction.CallbackContext context)
     {
         horizontalMovement = context.ReadValue<Vector2>().x;
+        
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -92,12 +103,16 @@ public class PlayerMovementController : MonoBehaviour
                 //Hold down jump button = full height
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpsRemaining--;
+
+                playerAnim.SetTrigger("Jump");
             }
             else if (context.canceled && rb.linearVelocity.y > 0)
             {
                 //Light tap of jump button = half the height
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
                 jumpsRemaining--;
+
+                playerAnim.SetTrigger("Jump");
             }
         }
 
@@ -106,6 +121,8 @@ public class PlayerMovementController : MonoBehaviour
             isWallJumping = true;
             rb.linearVelocity = new Vector2(wallJumpDirection * wallJumpPower.x, wallJumpPower.y);
             wallJumpTimer = 0f;
+
+            playerAnim.SetTrigger("Jump");
 
             if (transform.localScale.x != wallJumpDirection)
             {
