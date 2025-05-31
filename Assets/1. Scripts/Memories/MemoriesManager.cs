@@ -21,7 +21,7 @@ public class MemoriesManager : MonoBehaviour
     }
     private void Update()
     {
-        if (LevelManager.Instance.GetCurrLevel() == 2 && LevelManager.Instance.IsLevelCompleted())
+        if (Input.GetKeyDown(KeyCode.P)/*LevelManager.Instance.GetCurrLevel() == 2 && LevelManager.Instance.IsLevelCompleted()*/)
         {
             CanShowMemoryPanels();
         }
