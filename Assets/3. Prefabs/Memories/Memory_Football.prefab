@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 3508499052249163765}
   - component: {fileID: 111913380246394176}
   m_Layer: 0
-  m_Name: Memory_Jeremin
+  m_Name: Memory_Football
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
