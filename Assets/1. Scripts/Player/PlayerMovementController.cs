@@ -48,11 +48,13 @@ public class PlayerMovementController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator playerAnim;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public void FrameUpdate()
     {
@@ -69,23 +71,23 @@ public class PlayerMovementController : MonoBehaviour
             currentSpeed += sprintSpeed;
         }
 
-        if (horizontalMovement != 0)
-        {
+        if (Mathf.Abs(horizontalMovement) > 0.1f)
             playerAnim.SetBool("IsWalk", true);
-        }
         else
-        {
             playerAnim.SetBool("IsWalk", false);
-        }
+
+
         if (!isWallJumping && !isWallSliding)
         {
-            rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(horizontalMovement * currentSpeed, rb.linearVelocity.y);
             FlipX();
         }
 
         playerAnim.SetFloat("yVelocity", rb.linearVelocity.y);
-      
-        playerAnim.SetBool("isWallSliding", isWallSliding);
+        
+
+        Debug.Log(isWallSliding);
+        
     }
     
     public void Move(InputAction.CallbackContext context)
@@ -158,9 +160,13 @@ public class PlayerMovementController : MonoBehaviour
         {
             isWallSliding = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -wallSlideSpeed));
+
         }
         else
             isWallSliding = false;
+
+
+        playerAnim.SetBool("isWallSliding", isWallSliding);
     }
 
     private void ProcessWallJump()
