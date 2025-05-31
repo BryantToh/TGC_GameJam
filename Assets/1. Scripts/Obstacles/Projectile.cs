@@ -4,7 +4,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] int damage;
     private Rigidbody2D rb;
-    private float speed = 5f;
+    public float speed = 8f;
     private int dir = 1;
     void Start()
     {
