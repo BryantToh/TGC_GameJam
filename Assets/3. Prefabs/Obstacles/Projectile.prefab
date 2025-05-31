@@ -103,7 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: 8
+  launchForce: 5
+  upwardForce: 3
 --- !u!50 &3912158326629735420
 Rigidbody2D:
   serializedVersion: 5
@@ -130,7 +131,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!58 &3174169888849501253
 CircleCollider2D:
   m_ObjectHideFlags: 0
