@@ -389,6 +389,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: wallCheckPos
+      value: 
+      objectReference: {fileID: 1247147379}
+    - target: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476206602906403848, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1117064145}
+    - target: {fileID: 4476206602906403848, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1117064145}
+    - target: {fileID: 4476206602906403848, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476206602906403848, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476206602906403848, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovementController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476206602906403848, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovementController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6245632711559578296, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: m_Size.y
       value: 1.67
@@ -1187,6 +1219,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 822339487767804557, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
   m_PrefabInstance: {fileID: 493030507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1117064145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+  m_PrefabInstance: {fileID: 493030507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117064119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ede6fb6dbe69e42ab3d52c1506fbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130114407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1604,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
+--- !u!4 &1247147379 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4713697553237723092, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+  m_PrefabInstance: {fileID: 493030507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1352317164
 GameObject:
   m_ObjectHideFlags: 0

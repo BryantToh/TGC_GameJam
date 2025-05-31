@@ -9,18 +9,18 @@ public class PlayerAnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void SetRunning(bool isRunning)
+    public void SetFloat(string anim, float value)
     {
-        animator.SetBool("isRunning", isRunning);
+        animator.SetFloat(anim, value);
     }
 
-    public void SetWallSlide(bool isWallSlide)
+    public void SetBool(string anim,bool isAnim)
     {
-        animator.SetBool("isWallSlide", isWallSlide);
+        animator.SetBool(anim,isAnim);
     }
-    public void TriggerJump()
+
+    public void SetTrigger(string anim)
     {
-        animator.ResetTrigger("onJump");
-        animator.SetTrigger("onJump");
+        animator.SetTrigger(anim);
     }
 }

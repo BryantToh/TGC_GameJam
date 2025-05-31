@@ -27,6 +27,7 @@ public abstract class Entity : MonoBehaviour
         rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
         StartCoroutine(EndKnockback());
     }
+
     private IEnumerator EndKnockback()
     {
         yield return new WaitForSeconds(knockbackDuration);

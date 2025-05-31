@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Obstacles : Entity
 {
-    private Vector2 obstaclePos;
     private GameObject player;
     private Rigidbody2D rb;
     private PlayerStatus status;
@@ -13,14 +12,19 @@ public class Obstacles : Entity
         player = GameObject.FindGameObjectWithTag("Player");
         rb = player.GetComponent<Rigidbody2D>();
         status = player.GetComponent<PlayerStatus>();
-        obstaclePos = new Vector2(transform.position.x, transform.position.y);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
-            ApplyKnockBack(rb, obstaclePos);
-            DealDamage(status);
+            Rigidbody2D playerRb = collision.collider.GetComponent<Rigidbody2D>();
+            PlayerStatus playerStatus = collision.collider.GetComponent<PlayerStatus>();
+
+            if (playerRb != null && playerStatus != null)
+            {
+                ApplyKnockBack(playerRb, transform.position);
+                DealDamage(playerStatus);
+            }
         }
     }
 }
