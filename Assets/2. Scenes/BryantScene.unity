@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   memoryPrefabs:
   - {fileID: 500249433}
+  - {fileID: 3230568653144459353, guid: 8a514e897ddf1744bb02f7a3328f6210, type: 3}
 --- !u!1 &443652961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1523,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111913380246394176, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
+      propertyPath: memorySO
+      value: 
+      objectReference: {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
     - target: {fileID: 344240412050406897, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
       propertyPath: m_Color.a
       value: 0

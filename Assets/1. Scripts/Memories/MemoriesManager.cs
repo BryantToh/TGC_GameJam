@@ -28,24 +28,44 @@ public class MemoriesManager : MonoBehaviour
     }
     private void CanShowMemoryPanels()
     {
+        List<Image> allImagesToFade = new List<Image>();
+
         for (int i = 0; i < memoryPrefabs.Count; i++)
         {
+            if (i > 0)
+            {
+                memoryPrefabs[i - 1].SetActive(true);
+            }
+
             memoryPrefabs[i].SetActive(true);
+
             foreach (Transform child in memoryPrefabs[i].transform)
             {
                 child.gameObject.SetActive(true);
-                Image image = child.gameObject.GetComponentInChildren<Image>();
-                if (image != null)
-                {
-                    StartCoroutine(FadeIn(image));
-                }
+
+                Image[] images = child.GetComponentsInChildren<Image>(true);
+                allImagesToFade.AddRange(images);
             }
         }
+
+        StartCoroutine(FadeImagesSequentially(allImagesToFade));
     }
+
+    private IEnumerator FadeImagesSequentially(List<Image> images)
+    {
+        foreach (Image img in images)
+        {
+            img.gameObject.SetActive(true);
+            yield return StartCoroutine(FadeIn(img));
+        }
+    }
+
     private IEnumerator FadeIn(Image image)
     {
         float elapsed = 0f;
         Color color = image.color;
+        color.a = 0f;
+        image.color = color;
 
         while (elapsed < fadeDuration)
         {
