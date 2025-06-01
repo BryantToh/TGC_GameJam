@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Obstacles : Entity
 {
+    public bool canKnockback;
     private GameObject player;
     private Rigidbody2D rb;
     private PlayerStatus status;
@@ -22,8 +23,11 @@ public class Obstacles : Entity
 
             if (playerRb != null && playerStatus != null)
             {
-                ApplyKnockBack(playerRb, transform.position);
-                DealDamage(playerStatus);
+                if (canKnockback)
+                {
+                    ApplyKnockBack(playerRb, transform.position);
+                    DealDamage(playerStatus);
+                }
             }
         }
     }

@@ -23,6 +23,7 @@ public class Transition : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             DoTransition();
+            LevelManager.Instance.SetCompleteLevel(true);
         }
     }
     private void DoTransition()

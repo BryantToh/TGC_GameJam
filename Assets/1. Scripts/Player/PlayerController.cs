@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     private PlayerInteract m_playerInteract;
     private PlayerMovementController m_newPlayerMovement;
 
+    Vector2 initPos;
+
     private void Awake()
     {
         //m_playerMovement = GetComponent<PlayerMovement>();
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         m_playerInteract.Init();
+        initPos = transform.position;
     }
 
     private void Update()
@@ -23,6 +26,12 @@ public class PlayerController : MonoBehaviour
         //m_playerMovement.FrameUpdate();
         m_newPlayerMovement.FrameUpdate();
         m_playerInteract.FrameUpdate();
+
+        if (LevelManager.Instance.IsNextLevelLoaded())
+        {
+            transform.position = initPos;
+            LevelManager.Instance.CanLoadNextLevel(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

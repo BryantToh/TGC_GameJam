@@ -83,13 +83,15 @@ public class PlayerMovementController : MonoBehaviour
             FlipX();
         }
 
-        playerAnim.SetFloat("yVelocity", rb.linearVelocity.y);
-        
+        playerAnim.SetFloat("yVelocity", rb.linearVelocityY);
+        playerAnim.SetBool("isWallSliding", isWallSliding);
 
         Debug.Log(isWallSliding);
-        
+        playerAnim.SetBool("isJump", !isGrounded && rb.linearVelocity.y > 0.1f);
+
+
     }
-    
+
     public void Move(InputAction.CallbackContext context)
     {
         horizontalMovement = context.ReadValue<Vector2>().x;
@@ -106,7 +108,7 @@ public class PlayerMovementController : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpsRemaining--;
 
-                playerAnim.SetTrigger("Jump");
+                playerAnim.SetBool("isJump", true);
             }
             else if (context.canceled && rb.linearVelocity.y > 0)
             {
@@ -114,7 +116,7 @@ public class PlayerMovementController : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
                 jumpsRemaining--;
 
-                playerAnim.SetTrigger("Jump");
+                playerAnim.SetBool("isJump", true);
             }
         }
 
@@ -124,7 +126,7 @@ public class PlayerMovementController : MonoBehaviour
             rb.linearVelocity = new Vector2(wallJumpDirection * wallJumpPower.x, wallJumpPower.y);
             wallJumpTimer = 0f;
 
-            playerAnim.SetTrigger("Jump");
+            playerAnim.SetBool("isJump", true);
 
             if (transform.localScale.x != wallJumpDirection)
             {
@@ -144,6 +146,8 @@ public class PlayerMovementController : MonoBehaviour
         {
             jumpsRemaining = maxJumps;
             isGrounded = true;
+
+            playerAnim.SetBool("isJump", false);
         }
         else
             isGrounded = false;
@@ -164,9 +168,6 @@ public class PlayerMovementController : MonoBehaviour
         }
         else
             isWallSliding = false;
-
-
-        playerAnim.SetBool("isWallSliding", isWallSliding);
     }
 
     private void ProcessWallJump()
