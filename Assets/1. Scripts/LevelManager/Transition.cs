@@ -8,6 +8,7 @@ public class Transition : MonoBehaviour
     [SerializeField] GameObject playerObj;
     [SerializeField] Transform transitionPoint;
     [SerializeField] float increaseDuration;
+    [SerializeField] float decreaseDuration;
     private Light2D lightObject;
     private float maxIntensity = 60f;
     void Start()
@@ -51,10 +52,10 @@ public class Transition : MonoBehaviour
         float elapsed = 0f;
         float endIntensity = lightObject.intensity;
         
-        while (elapsed < increaseDuration)
+        while (elapsed < increaseDuration) 
         {
             elapsed += Time.deltaTime;
-            lightObject.intensity = Mathf.Lerp(endIntensity, 1f, elapsed / increaseDuration);
+            lightObject.intensity = Mathf.Lerp(endIntensity, 1f, elapsed / decreaseDuration);
             yield return null;
         }
         transitionLight.SetActive(false);
