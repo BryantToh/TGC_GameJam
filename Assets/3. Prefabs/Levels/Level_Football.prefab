@@ -236253,6 +236253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &7607379997881885688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -236517,6 +236518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &7440063426093528141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -236653,6 +236655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &8980643033798520615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -236871,6 +236874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &8077601767061192763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -237065,6 +237069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &8628121563713088516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -237201,6 +237206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &8634729215278309032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -237337,6 +237343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &8636172260898161828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -237539,6 +237546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &5424449884496540267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -237675,6 +237683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &5698581609794852622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -237691,22 +237700,6 @@ PrefabInstance:
     - target: {fileID: 3234097041201447523, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
       propertyPath: m_Name
       value: Bacteria
-      objectReference: {fileID: 0}
-    - target: {fileID: 3234097041201447523, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      propertyPath: m_TagString
-      value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
       propertyPath: m_LocalPosition.x
@@ -237748,77 +237741,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -47.454
       objectReference: {fileID: 0}
-    - target: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      propertyPath: m_ConstrainProportionsScale
+    - target: {fileID: 7512587050323203539, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
+      propertyPath: canKnockback
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3234097041201447523, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6109390276414391715}
-    - targetCorrespondingSourceObject: {fileID: 3234097041201447523, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9035110870428859425}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
---- !u!1 &850711225807843045 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3234097041201447523, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
-  m_PrefabInstance: {fileID: 2823624225988996230}
-  m_PrefabAsset: {fileID: 0}
---- !u!70 &6109390276414391715
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850711225807843045}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.0000009536743, y: 0.0000009536743}
-  m_Size: {x: 0.5, y: 0.7}
-  m_Direction: 0
---- !u!114 &9035110870428859425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850711225807843045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cfcc8f8da5d71f41a29f61d0748606c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  isKnockedBack: 0
 --- !u!4 &5705231914255175754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -238281,6 +238212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &4878324752195914284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -238557,6 +238489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!4 &6807977284809326058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7494703874950053068, guid: 8b3eaf332b4421546a147e85ceee3a22, type: 3}
@@ -239362,6 +239295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &4993303971612445402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239626,6 +239560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &5089832439690295895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240206,6 +240141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &5570315348351146982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240412,6 +240348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &6668130712029139209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240672,6 +240609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &6994834336227623133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240800,6 +240738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &7016162081100771402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241128,6 +241067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &7229736854384803351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241330,6 +241270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &8207423524087713041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241458,6 +241399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 0
 --- !u!1001 &8280003094044708569
 PrefabInstance:
   m_ObjectHideFlags: 0
