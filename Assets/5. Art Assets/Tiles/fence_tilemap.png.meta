@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 47367dc67f5ec1a44b6a84d144f8b91b
+guid: bf797882431b22e4198e944e6fe5f8db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2249902352965336338
-    second: grass_tilemap_0
+      213: -3043289787036471729
+    second: fence_tilemap_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass_tilemap_0
+      name: fence_tilemap_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,21 +134,65 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee28f200bbdb6c0e0800000000000000
-      internalID: -2249902352965336338
+      spriteID: f4eed1f001014c5d0800000000000000
+      internalID: -3043289787036471729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_tilemap_1
+      name: fence_tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbbc32dff99f27141b811f5b9079a4d7
+      internalID: -1940874464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c9f8f201aa5a54c84836835e5756f1
+      internalID: 1235795000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_tilemap_3
       rect:
         serializedVersion: 2
         x: 0
@@ -156,21 +200,65 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eba8daa60d1d6643a01896b071b6330
-      internalID: -1408321754
+      spriteID: b69da9b42f36966438bd358a289cf663
+      internalID: -1334909264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_tilemap_2
+      name: fence_tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53829d98e33fc364fac5aeea53eb655e
+      internalID: 955294665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_tilemap_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5188a96e0f537a449c8d3e8bfd17fa5
+      internalID: 1006883506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_tilemap_6
       rect:
         serializedVersion: 2
         x: 0
@@ -178,15 +266,59 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee0132d96a12084aa9b1f2ba25f080e
-      internalID: -408806325
+      spriteID: f6f2f0eeca002934c9c9b3baaf0e302b
+      internalID: -1682735191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43d7d2445a77fc4ca08a9439f96c674
+      internalID: -1227247475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ad7d4ba46239e4ba1ae9226176503f
+      internalID: -1791311842
       vertices: []
       indices: 
       edges: []
@@ -195,7 +327,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 953562f02388ca04fa6c41c1653d59d2
+    spriteID: 79521ad974559f64a83803af87daafea
     internalID: 0
     vertices: []
     indices: 
@@ -205,9 +337,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      grass_tilemap_0: -2249902352965336338
-      grass_tilemap_1: -1408321754
-      grass_tilemap_2: -408806325
+      fence_tilemap_0: -3043289787036471729
+      fence_tilemap_1: -1940874464
+      fence_tilemap_2: 1235795000
+      fence_tilemap_3: -1334909264
+      fence_tilemap_4: 955294665
+      fence_tilemap_5: 1006883506
+      fence_tilemap_6: -1682735191
+      fence_tilemap_7: -1227247475
+      fence_tilemap_8: -1791311842
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
