@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: ddde1d513bd654a47a48506718b81c7b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1094,11 +1094,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822339487767804557, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.2
+      value: 24.8
       objectReference: {fileID: 0}
     - target: {fileID: 822339487767804557, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 822339487767804557, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1188,6 +1188,10 @@ PrefabInstance:
       propertyPath: m_UpdateMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5399174568640767757, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9185947727155874033, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -1209,6 +1213,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1185772530001226998, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1911821588817263925, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
       propertyPath: keyId
       value: 3
@@ -1216,6 +1224,10 @@ PrefabInstance:
     - target: {fileID: 3246165414948197881, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
       propertyPath: m_Name
       value: Level_Football
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246165414948197881, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3316663896863956921, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1257,6 +1269,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5877878122608420281, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982776440283191085, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7002610936969460045, guid: e8a3337f05aa3f64f88db75046fe22d4, type: 3}
       propertyPath: keyId
       value: 2
@@ -1288,19 +1308,19 @@ PrefabInstance:
       objectReference: {fileID: 339910310}
     - target: {fileID: 6538441293503619449, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.39306
+      value: 24.993055
       objectReference: {fileID: 0}
     - target: {fileID: 6538441293503619449, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.952052
+      value: 1.2479475
       objectReference: {fileID: 0}
     - target: {fileID: 6959709610706721223, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.39306
+      value: 24.993055
       objectReference: {fileID: 0}
     - target: {fileID: 6959709610706721223, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.952052
+      value: 1.2479475
       objectReference: {fileID: 0}
     - target: {fileID: 8913984111642127211, guid: 2ca4fe81655779d49b1c799a2dafcc78, type: 3}
       propertyPath: m_LocalPosition.x

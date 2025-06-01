@@ -84,7 +84,7 @@ public class PlayerMovementController : MonoBehaviour
         }
 
         playerAnim.SetFloat("yVelocity", rb.linearVelocity.y);
-        
+        playerAnim.SetBool("isWallSliding", isWallSliding);
 
         Debug.Log(isWallSliding);
         
@@ -164,9 +164,6 @@ public class PlayerMovementController : MonoBehaviour
         }
         else
             isWallSliding = false;
-
-
-        playerAnim.SetBool("isWallSliding", isWallSliding);
     }
 
     private void ProcessWallJump()
