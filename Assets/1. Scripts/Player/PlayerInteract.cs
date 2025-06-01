@@ -33,7 +33,7 @@ public class PlayerInteract : MonoBehaviour
                 foundInteractable = true;
                 buttonDisplay.SetActive(true);
 
-                if (playerInput.GetKeyDown(playerInput.interactKey))
+                if (playerInput.GetKey(playerInput.interactKey))
                 {
                     interactable.Interact();
                     break;

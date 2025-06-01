@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
 
     private int levelIndex = 0;
+    private bool isNextLevelLoaded = false;
     private GameObject currentLevel;
     [SerializeField] List<LevelSO> levelPrefabs = new List<LevelSO>();
     [SerializeField] List<MemorySO> listOfMemory = new List<MemorySO>();
@@ -29,16 +30,31 @@ public class LevelManager : MonoBehaviour
     {
         //if (!LevelTasksCompleted())
         //    return;
-
+        Debug.Log("Loading Next Level");
         if (levelIndex < levelPrefabs.Count && levelPrefabs[levelIndex].levelCompleted)
         {
             levelIndex++;
             if (levelIndex < levelPrefabs.Count)
                 ActiveLevelPrefab(levelIndex);
             resetVariables();
+            isNextLevelLoaded = true;
         }
         else
+        {
+            isNextLevelLoaded = false;
             return;
+        }
+    }
+
+    public void SetCompleteLevel(bool isCompleted)
+    {
+        levelPrefabs[levelIndex].levelCompleted = isCompleted;
+    }
+
+    public bool IsNextLevelLoaded() => isNextLevelLoaded;
+    public void CanLoadNextLevel(bool canLoad)
+    {
+        isNextLevelLoaded = canLoad;
     }
     public int GetCurrLevel()
     {

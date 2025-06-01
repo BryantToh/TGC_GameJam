@@ -45,10 +45,10 @@ public class PlayerStatus : MonoBehaviour
     private void Update()
     {
         // Test damage/stamina with key input
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(10f);
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    TakeDamage(10f);
+        //}
 
         if (Input.GetKeyDown(KeyCode.H))
         {

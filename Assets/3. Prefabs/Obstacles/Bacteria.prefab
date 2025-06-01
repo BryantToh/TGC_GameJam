@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isKnockedBack: 0
+  canKnockback: 1
 --- !u!70 &803634644411396187
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
