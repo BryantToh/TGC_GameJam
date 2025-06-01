@@ -9,9 +9,10 @@ public class Transition : MonoBehaviour
     [SerializeField] Transform transitionPoint;
     [SerializeField] float increaseDuration;
     private Light2D lightObject;
-    private float maxIntensity = 40f;
+    private float maxIntensity = 60f;
     void Start()
     {
+        playerObj = GameObject.FindGameObjectWithTag("Player");
         lightObject = transitionLight.GetComponentInChildren<Light2D>();
         lightObject.intensity = 1f;
         transitionLight.SetActive(false);
@@ -40,6 +41,7 @@ public class Transition : MonoBehaviour
             yield return null;
         }
         lightObject.intensity = maxIntensity;
+        playerObj.transform.position = transitionPoint.transform.position;
         yield return new WaitForSeconds(2f);
         StartCoroutine(LightDown());
     }
@@ -51,7 +53,7 @@ public class Transition : MonoBehaviour
         while (elapsed < increaseDuration)
         {
             elapsed += Time.deltaTime;
-            lightObject.intensity = Mathf.Lerp(endIntensity, 1f, elapsed / increaseDuration - 2f);
+            lightObject.intensity = Mathf.Lerp(endIntensity, 1f, elapsed / increaseDuration);
             yield return null;
         }
         transitionLight.SetActive(false);
