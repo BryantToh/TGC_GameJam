@@ -20,11 +20,11 @@ public class PlayerInteract : MonoBehaviour
         {
             IInteractable interactable = collider.GetComponent<IInteractable>();
             Key key = collider.GetComponent<Key>();
-            AudioManager.instance.PlaySFX("interact", 0.5f);
 
             if (key != null)
             {
                 int id = key.keyId;
+                AudioManager.instance.PlaySFX("interact", 0.5f);
                 LevelManager.Instance.GetMemory().CollectKey(id);
                 collider.gameObject.SetActive(false);
             }

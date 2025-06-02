@@ -74,13 +74,13 @@ public class PlayerMovementController : MonoBehaviour
         if (Mathf.Abs(horizontalMovement) > 0.1f)
         {
             playerAnim.SetBool("IsWalk", true);
-            AudioManager.instance.PlaySFX("organicwalk", 0.5f);
-            CanAudioLoop(true);
+            //AudioManager.instance.PlaySFX("organicwalk", 0.5f);
+            //AudioManager.instance.CanAudioLoop(true);
         }
         else
         {
             playerAnim.SetBool("IsWalk", false);
-            CanAudioLoop(false);
+            //AudioManager.instance.CanAudioLoop(false);
         }
 
 
@@ -170,13 +170,13 @@ public class PlayerMovementController : MonoBehaviour
         if (!isGrounded && WallCheck() && horizontalMovement != 0)
         {
             isWallSliding = true;
-            AudioManager.instance.PlaySFX("wallslide", 0.5f);
-            CanAudioLoop(true);
+            //AudioManager.instance.PlaySFX("wallslide", 0.5f);
+            //AudioManager.instance.CanAudioLoop(true);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -wallSlideSpeed));
         }
         else
         {
-            CanAudioLoop(false);
+            //AudioManager.instance.CanAudioLoop(false);
             isWallSliding = false;
         }
     }
@@ -225,11 +225,6 @@ public class PlayerMovementController : MonoBehaviour
             localScale.x *= -1;
             transform.localScale = localScale; 
         }
-    }
-
-    private void CanAudioLoop(bool canLoop)
-    {
-        AudioManager.instance.audioSourceSFX.GetComponent<AudioSource>().loop = canLoop;
     }
 
     private void OnDrawGizmosSelected()

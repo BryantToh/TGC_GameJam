@@ -66,6 +66,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void CanAudioLoop(bool canLoop)
+    {
+        audioSourceSFX.loop = canLoop;
+    }
 
     //IEnumerator WaitForAudioToFinish()
     //{
