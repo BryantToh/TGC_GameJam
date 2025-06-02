@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3123111137138106839}
-  - component: {fileID: 6373505535143806341}
+  - component: {fileID: 1541810031690305980}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6373505535143806341
+--- !u!114 &1541810031690305980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,6 +41,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 491933204034975672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53dbc9bfeabd33843990c7533ebe3d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b0d37756bd63824d85350fbd8e4e507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listOfBGAudioClips: []
+  listOfAudioClip:
+  - tag: damaged
+    audioClip: {fileID: 8300000, guid: ad0305940db945c41bf4771c255f63f0, type: 3}
+  - tag: grasswalk
+    audioClip: {fileID: 8300000, guid: accdb8a199d618348824148b98b5b6e9, type: 3}
+  - tag: organicwalk
+    audioClip: {fileID: 8300000, guid: 10e655d8caa23dd428e68e44c27c36d8, type: 3}
+  - tag: interact
+    audioClip: {fileID: 8300000, guid: c1b9d1b263a2302449ac6f251dad288c, type: 3}
+  - tag: jump
+    audioClip: {fileID: 8300000, guid: 0b8a797433ab6c14d837fd443dca50ad, type: 3}
+  - tag: wallslide
+    audioClip: {fileID: 8300000, guid: dbf8c055a17c16d40b1f50247b80d700, type: 3}
+  - tag: nextlevel
+    audioClip: {fileID: 8300000, guid: cd36accd08c31d44b8c52cca1b731705, type: 3}
