@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovementController : MonoBehaviour
 { 
@@ -9,6 +10,7 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 5f;
     public float sprintSpeed = 7f;
+    public float staminaCostPerSecond = 10f;
     float horizontalMovement;
 
     [Header("Flip Sprite")]
@@ -49,12 +51,14 @@ public class PlayerMovementController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator playerAnim;
     private SpriteRenderer spriteRenderer;
+    private PlayerStatus playerStatus;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerStatus = GetComponent<PlayerStatus>();
     }
     public void FrameUpdate()
     {
@@ -63,13 +67,23 @@ public class PlayerMovementController : MonoBehaviour
         ProcessGravity();
         GroundCheck();
 
+        bool canSprint = playerStatus.GetCurrentStamina() > 0.1;
 
         float currentSpeed = moveSpeed;
 
         if (horizontalMovement != 0 && playerInput.GetKey(playerInput.sprintKey))
         {
-            currentSpeed += sprintSpeed;
+            if (canSprint)
+            {
+                currentSpeed += sprintSpeed;
+                playerStatus.UseStamina(staminaCostPerSecond * Time.deltaTime);
+                playerStatus.SetSprinting(true);
+            }
+            else
+                playerStatus.SetSprinting(false);
         }
+        else
+            playerStatus.SetSprinting(false);
 
         if (Mathf.Abs(horizontalMovement) > 0.1f)
             playerAnim.SetBool("IsWalk", true);
