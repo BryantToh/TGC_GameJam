@@ -12,8 +12,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioClip> listOfBGAudioClips;
     [SerializeField] private List<AudioSFX> listOfAudioClip;
     public static AudioManager instance;
-    AudioSource audioSourceBG;
-    AudioSource audioSourceSFX;
+    [HideInInspector]
+    public AudioSource audioSourceBG;
+    [HideInInspector]
+    public AudioSource audioSourceSFX;
     private void Awake()
     {
         if (instance == null)
@@ -64,6 +66,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void CanAudioLoop(bool canLoop)
+    {
+        audioSourceSFX.loop = canLoop;
+    }
 
     //IEnumerator WaitForAudioToFinish()
     //{
