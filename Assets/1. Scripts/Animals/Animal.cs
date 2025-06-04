@@ -9,6 +9,7 @@ public abstract class Animal : MonoBehaviour
     }
 
     [SerializeField] private float chaseRange = 5f;
+    [SerializeField] protected float movementSpeed = 2f;
     [SerializeField] protected bool canReturnToIdle = false;
     private GameObject player;
 
@@ -54,7 +55,7 @@ public abstract class Animal : MonoBehaviour
     {
         if (player != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * 2f);
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * movementSpeed);
         }
     }
 
