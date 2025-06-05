@@ -13,14 +13,15 @@ public abstract class Animal : MonoBehaviour
     [SerializeField] protected bool canReturnToIdle = false;
     protected Animator anim;
     private GameObject player;
-    private SpriteRenderer spriteRenderer;
 
     protected STATE currentState = STATE.IDLE;
+    private bool isFacingRight = true;
 
     protected virtual void Start()
     {
+        isFacingRight = true;
+
         anim = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -61,13 +62,13 @@ public abstract class Animal : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * movementSpeed);
 
-            if (player.transform.position.x < transform.position.x)
+            if (player.transform.position.x < transform.position.x && !isFacingRight)
             {
-                spriteRenderer.flipX = false; 
+                FlipX();
             }
-            else
+            else if (player.transform.position.x > transform.position.x && isFacingRight)
             {
-                spriteRenderer.flipX = true; 
+                FlipX();
             }
         }
     }
@@ -84,5 +85,13 @@ public abstract class Animal : MonoBehaviour
         {
             currentState = newState;
         }
+    }
+
+    protected void FlipX()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
