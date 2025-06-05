@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level_2_Mountain
   m_EditorClassIdentifier: 
   levelName: Mountain
-  levelPrefab: {fileID: 4857938057485366876, guid: 15cf822edbb38b049a5b81f87bec7a79, type: 3}
+  levelPrefab: {fileID: 505190702801773938, guid: ed8aa96225ea0aa408892de00772dc9b, type: 3}
   levelCompleted: 0

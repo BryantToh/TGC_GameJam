@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7726273820850047476}
-  - component: {fileID: 6265835544438846324}
+  - component: {fileID: 7648024302230443159}
+  - component: {fileID: 5711148655286558801}
+  - component: {fileID: 1941754445594256388}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6265835544438846324
+--- !u!114 &7648024302230443159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,5 +46,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f39e91e3a71e4449d2f4dad98a2fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefabs: []
-  memorySO: []
+  levelPrefabs:
+  - {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
+  listOfMemory:
+  - {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
+  - {fileID: 11400000, guid: 380763446b555444d92c40361984410b, type: 2}
+  - {fileID: 11400000, guid: 9eb1973b102abe5438a0c07616dfb330, type: 2}
+--- !u!114 &5711148655286558801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485370428793094913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d53a15416bdd944f936bd08dc0ceb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memoryPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1941754445594256388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485370428793094913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f567df12b71814c9da1cb38bb33136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completedImage1: {fileID: 0}
+  completedImage2: {fileID: 0}
+  completedImage3: {fileID: 0}
+  levelSlider1: {fileID: 0}
+  levelSlider2: {fileID: 0}
+  sliderDuration: 2
+  levelTransitionObj: {fileID: 0}
+  transitionBG: {fileID: 0}
