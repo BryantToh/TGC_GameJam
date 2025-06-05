@@ -36,7 +36,6 @@ public class LevelManager : MonoBehaviour
     {
         //if (!LevelTasksCompleted())
         //    return;
-        Debug.Log("Loading Next Level");
         if (levelIndex < levelPrefabs.Count && levelPrefabs[levelIndex].levelCompleted)
         {
             levelIndex++;
