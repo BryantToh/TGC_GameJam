@@ -24,7 +24,13 @@ public class LevelManager : MonoBehaviour
         {
             listOfMemory[i].Reset();
         }
+
+        for (int i = 0; i < levelPrefabs.Count; i++)
+        {
+            levelPrefabs[i].levelCompleted = false;
+        }
         ActiveLevelPrefab(levelIndex);
+
     }
     public void LoadNextLevel()
     {
