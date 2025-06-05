@@ -86,7 +86,6 @@ public class PlayerMovementController : MonoBehaviour
         playerAnim.SetFloat("yVelocity", rb.linearVelocityY);
         playerAnim.SetBool("isWallSliding", isWallSliding);
 
-        Debug.Log(isWallSliding);
         playerAnim.SetBool("isJump", !isGrounded && rb.linearVelocity.y > 0.1f);
 
 

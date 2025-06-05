@@ -66,9 +66,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   memoryPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3230568653144459353, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
+  - {fileID: 3230568653144459353, guid: 8a514e897ddf1744bb02f7a3328f6210, type: 3}
+  - {fileID: 3230568653144459353, guid: 8832cda9a2d64184aa5bbdb41ae68970, type: 3}
 --- !u!114 &1941754445594256388
 MonoBehaviour:
   m_ObjectHideFlags: 0
