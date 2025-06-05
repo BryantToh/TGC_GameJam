@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPrefabs:
   - {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
+  - {fileID: 11400000, guid: 4835e56ce982111418e1239dd7bcf3ca, type: 2}
   listOfMemory:
   - {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
   - {fileID: 11400000, guid: 380763446b555444d92c40361984410b, type: 2}
