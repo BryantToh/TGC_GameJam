@@ -323,6 +323,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'memoryPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3230568653144459353, guid: 8a514e897ddf1744bb02f7a3328f6210, type: 3}
+    - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'memoryPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3230568653144459353, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'levelPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4835e56ce982111418e1239dd7bcf3ca, type: 2}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'levelPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'listOfMemory.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 380763446b555444d92c40361984410b, type: 2}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'listOfMemory.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
     - target: {fileID: 7726273820850047476, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -715,7 +739,7 @@ SceneRoots:
   - {fileID: 995030059}
   - {fileID: 2142657981}
   - {fileID: 1066903127}
+  - {fileID: 52761637}
   - {fileID: 1101673033}
   - {fileID: 1478670558}
   - {fileID: 1808000498}
-  - {fileID: 52761637}
