@@ -11,12 +11,16 @@ public abstract class Animal : MonoBehaviour
     [SerializeField] private float chaseRange = 5f;
     [SerializeField] protected float movementSpeed = 2f;
     [SerializeField] protected bool canReturnToIdle = false;
+    protected Animator anim;
     private GameObject player;
+    private SpriteRenderer spriteRenderer;
 
     protected STATE currentState = STATE.IDLE;
 
     protected virtual void Start()
     {
+        anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -56,6 +60,15 @@ public abstract class Animal : MonoBehaviour
         if (player != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * movementSpeed);
+
+            if (player.transform.position.x < transform.position.x)
+            {
+                spriteRenderer.flipX = false; 
+            }
+            else
+            {
+                spriteRenderer.flipX = true; 
+            }
         }
     }
 
