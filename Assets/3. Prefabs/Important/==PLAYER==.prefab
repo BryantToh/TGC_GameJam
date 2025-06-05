@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 822339487767804557}
   - component: {fileID: 9185947727155874033}
   - component: {fileID: 2669296601987973219}
-  - component: {fileID: 6245632711559578296}
+  - component: {fileID: 4371496417277233969}
   - component: {fileID: 4476206602906403848}
   - component: {fileID: 5399174568640767757}
   - component: {fileID: 5693577524631713211}
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &6245632711559578296
-BoxCollider2D:
+--- !u!70 &4371496417277233969
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,18 +161,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.0030745268}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.75}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.7563069}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.87499994, y: 1.7499999}
+  m_Direction: 0
 --- !u!114 &4476206602906403848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +413,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   wallSlideSpeed: 2
-  wallJumpPower: {x: 10, y: 6}
+  wallJumpPower: {x: 13, y: 8}
   baseGravity: 2
   maxFallSpeed: 18
   fallGravityMult: 2

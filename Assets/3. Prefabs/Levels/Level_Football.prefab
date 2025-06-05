@@ -12609,7 +12609,7 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   transitionPoint: {fileID: 4533722865416210635}
   increaseDuration: 4
-  decreaseDuration: 1
+  decreaseDuration: 2
 --- !u!1 &2711461124574862803
 GameObject:
   m_ObjectHideFlags: 0

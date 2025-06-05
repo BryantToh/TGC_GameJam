@@ -72,16 +72,9 @@ public class PlayerMovementController : MonoBehaviour
         }
 
         if (Mathf.Abs(horizontalMovement) > 0.1f)
-        {
             playerAnim.SetBool("IsWalk", true);
-            //AudioManager.instance.PlaySFX("organicwalk", 0.5f);
-            //AudioManager.instance.CanAudioLoop(true);
-        }
         else
-        {
             playerAnim.SetBool("IsWalk", false);
-            //AudioManager.instance.CanAudioLoop(false);
-        }
 
 
         if (!isWallJumping && !isWallSliding)
@@ -114,7 +107,7 @@ public class PlayerMovementController : MonoBehaviour
                 //Hold down jump button = full height
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpsRemaining--;
-                AudioManager.instance.PlaySFX("jump", 0.5f);
+
                 playerAnim.SetBool("isJump", true);
             }
             else if (context.canceled && rb.linearVelocity.y > 0)
@@ -170,15 +163,11 @@ public class PlayerMovementController : MonoBehaviour
         if (!isGrounded && WallCheck() && horizontalMovement != 0)
         {
             isWallSliding = true;
-            //AudioManager.instance.PlaySFX("wallslide", 0.5f);
-            //AudioManager.instance.CanAudioLoop(true);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -wallSlideSpeed));
+
         }
         else
-        {
-            //AudioManager.instance.CanAudioLoop(false);
             isWallSliding = false;
-        }
     }
 
     private void ProcessWallJump()
