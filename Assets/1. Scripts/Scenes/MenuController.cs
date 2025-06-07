@@ -64,7 +64,7 @@ public class MenuController : UIShakeEffect
     {
         if (m_menuRectTransform != null)
         {
-            foreach (RectTransform item in m_menuRectTransform)
+            foreach (RectTransform item in m_settingsRectTransform)
             {
                 ShakeUI(item, 0.2f, 6f);
             }
@@ -124,10 +124,12 @@ public class MenuController : UIShakeEffect
 
         if (SceneManager.GetActiveScene().name == "MainMenu")
             yield break;
-
-        Time.timeScale = 0.0f;
-        countChanged = false;
-        pauseCount++;
+        else
+        {
+            Time.timeScale = 0.0f;
+            countChanged = false;
+            pauseCount++;
+        }
     }
 
     IEnumerator CloseSettingsAftShake()
@@ -145,8 +147,11 @@ public class MenuController : UIShakeEffect
         }
         if (SceneManager.GetActiveScene().name == "MainMenu")
             yield break;
-        countChanged = false;
-        pauseCount--;
+        else
+        {
+            pauseCount--;
+            countChanged = false;
+        }
     }
 
     IEnumerator ShowMenuAftShake()
