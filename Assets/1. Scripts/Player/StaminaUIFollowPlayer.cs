@@ -19,9 +19,12 @@ public class StaminaUIFollowPlayer : MonoBehaviour
     private void Update()
     {
         // Convert the player's world position to screen space
-        Vector3 screenPosition = mainCamera.WorldToScreenPoint(player.position + offset);
+        //Vector3 screenPosition = mainCamera.WorldToScreenPoint(player.position + offset);
 
         // Update the position of the stamina UI (on screen space)
-        staminaUI.position = screenPosition;
+        //staminaUI.position = screenPosition;
+
+        Vector3 newPos = player.position + offset;
+        staminaUI.position = newPos;
     }
 }
