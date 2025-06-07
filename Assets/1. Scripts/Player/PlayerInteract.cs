@@ -26,6 +26,7 @@ public class PlayerInteract : MonoBehaviour
                 int id = key.keyId;
                 LevelManager.Instance.GetMemory().CollectKey(id);
                 collider.gameObject.SetActive(false);
+                AudioManager.instance.PlaySFX("interact", 0.5f);
             }
 
             if (interactable != null)
@@ -35,6 +36,7 @@ public class PlayerInteract : MonoBehaviour
 
                 if (playerInput.GetKey(playerInput.interactKey))
                 {
+                    AudioManager.instance.PlaySFX("interact", 0.5f);
                     interactable.Interact();
                     break;
                 }
