@@ -49,6 +49,8 @@ public class LevelManager : MonoBehaviour
             isNextLevelLoaded = false;
             return;
         }
+
+        PlayerStatus.Instance.ResetStatus();
     }
 
     public void SetCompleteLevel(bool isCompleted)
