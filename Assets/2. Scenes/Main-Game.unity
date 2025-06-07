@@ -332,13 +332,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3230568653144459353, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: levelPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4835e56ce982111418e1239dd7bcf3ca, type: 2}
+      objectReference: {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
+      objectReference: {fileID: 11400000, guid: 4835e56ce982111418e1239dd7bcf3ca, type: 2}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'levelPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ab8c64afe35d084f821d4239d3729d6, type: 2}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'listOfMemory.Array.data[0]'
       value: 
