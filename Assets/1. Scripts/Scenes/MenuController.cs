@@ -23,7 +23,6 @@ public class MenuController : UIShakeEffect
         {
             if (Input.GetKeyDown(KeyCode.Escape) && pauseCount == 0)
             {
-                Time.timeScale = 0.0f;
                 OpenSettings();
                 countChanged = true;
             }
@@ -146,7 +145,12 @@ public class MenuController : UIShakeEffect
         if (SceneManager.GetActiveScene().name == "MainMenu")
             yield break;
 
-        pauseCount--;
+        if (SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            Time.timeScale = 0.0f;
+            pauseCount--;
+        }
+
         countChanged = false;
     }
 
