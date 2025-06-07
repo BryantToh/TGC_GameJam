@@ -17,6 +17,7 @@ public class LevelTransition : MonoBehaviour
     {
         if (LevelManager.Instance.IsLevelCompleted())
         {
+            AudioManager.instance.PlaySFX("nextlevel", 0.5f);
             levelTransitionObj.SetActive(true);
             transitionBG.SetActive(true);
             LevelTransitionSlider();

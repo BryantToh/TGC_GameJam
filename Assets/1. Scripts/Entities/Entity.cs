@@ -14,6 +14,7 @@ public abstract class Entity : MonoBehaviour
         if (player != null)
         {
             player.TakeDamage(damage);
+            AudioManager.instance.PlaySFX("damage", 0.5f);
         }
     }
     public virtual void ApplyKnockBack(Rigidbody2D rb, Vector2 obstaclePos)
