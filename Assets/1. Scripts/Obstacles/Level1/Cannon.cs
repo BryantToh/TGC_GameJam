@@ -9,7 +9,7 @@ public class Cannon : Entity
     //private Rigidbody2D rb;
     //private Vector2 obstaclePos;
     bool inRange = false;
-    float timer = 2f;
+    float timer = 1f;
     float time = 0f;
     void Start()
     {
