@@ -120,6 +120,7 @@ public class PlayerMovementController : MonoBehaviour
                 //Hold down jump button = full height
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpsRemaining--;
+                AudioManager.instance.PlaySFX("jump", 0.5f);
 
                 playerAnim.SetBool("isJump", true);
             }
@@ -143,6 +144,7 @@ public class PlayerMovementController : MonoBehaviour
 
             if (transform.localScale.x != wallJumpDirection)
             {
+                AudioManager.instance.PlaySFX("jump", 0.5f);
                 isFacingRight = !isFacingRight;
                 Vector3 localScale = transform.localScale;
                 localScale.x *= -1;
