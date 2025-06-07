@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    public static PlayerStatus Instance;
     private PlayerStats stats;
 
     private float currentHealth;
@@ -15,6 +16,7 @@ public class PlayerStatus : MonoBehaviour
     public float staminaRegenDelay = 2f; // Delay before starting regen after exhaustion
 
     private bool isSprinting;
+
 
     public void SetSprinting(bool sprinting)
     {
@@ -31,6 +33,11 @@ public class PlayerStatus : MonoBehaviour
         stats = GetComponent<PlayerStats>();
         if (stats == null)
             Debug.LogError("PlayerStats component not found!");
+
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
     private void Start()
@@ -45,7 +52,7 @@ public class PlayerStatus : MonoBehaviour
     private void Update()
     {
         // Test damage/stamina with key input
-        //if (Input.GetKeyDown(KeyCode.E))
+        //if (Input.GetKeyDown(KeyCode.P))
         //{
         //    TakeDamage(10f);
         //}
@@ -104,7 +111,11 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-
+    public void ResetStatus()
+    {
+        currentHealth = stats.maxHealth;
+        currentStamina = stats.maxStamina;
+    }
     private void Die()
     {
         Debug.Log("Player has died.");
