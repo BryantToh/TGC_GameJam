@@ -115,6 +115,9 @@ public class PlayerStatus : MonoBehaviour
     {
         currentHealth = stats.maxHealth;
         currentStamina = stats.maxStamina;
+
+        onHealthChanged?.Invoke(currentHealth, stats.maxHealth);
+        onStaminaChanged?.Invoke(currentStamina, stats.maxStamina);
     }
     private void Die()
     {
