@@ -4,6 +4,6 @@ public class GrandpaInteraction : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
-        LevelManager.Instance.LoadNextLevel();
+        LevelManager.Instance.SetCompleteLevel(true);
     }
 }
