@@ -105,6 +105,7 @@ public abstract class Animal : MonoBehaviour
 
         if (attackTimer <= 0f)
         {
+            Debug.Log("Play");
             anim.SetTrigger("canAttack");
             attackTimer = attackTime;
         }
