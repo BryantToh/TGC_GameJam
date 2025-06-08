@@ -39,11 +39,10 @@ public class AudioManager : MonoBehaviour
 
     IEnumerator PlayAudio()
     {
-
         foreach (var clip in listOfBGAudioClips)
         {
             audioSourceBG.clip = clip;
-
+            audioSourceBG.volume = 0.15f;
             audioSourceBG.Play();
 
             yield return new WaitForSeconds(clip.length);
@@ -79,6 +78,12 @@ public class AudioManager : MonoBehaviour
 }
 [System.Serializable]
 public class AudioSFX
+{
+    public string tag;
+    public AudioClip audioClip;
+}
+[System.Serializable]
+public class AudioBGM
 {
     public string tag;
     public AudioClip audioClip;
