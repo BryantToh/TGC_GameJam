@@ -15,7 +15,7 @@ public class LevelTransition : MonoBehaviour
 
     void Update()
     {
-        if (LevelManager.Instance.IsLevelCompleted())
+        if (LevelManager.Instance.IsLevelCompleted() && !LevelManager.Instance.IsLastLevel())
         {
             AudioManager.instance.PlaySFX("nextlevel", 0.5f);
             levelTransitionObj.SetActive(true);

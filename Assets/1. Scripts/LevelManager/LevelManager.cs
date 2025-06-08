@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,23 +35,27 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        //if (!LevelTasksCompleted())
-        //    return;
         if (levelIndex < levelPrefabs.Count && levelPrefabs[levelIndex].levelCompleted)
         {
             levelIndex++;
+
             if (levelIndex < levelPrefabs.Count)
+            {
                 ActiveLevelPrefab(levelIndex);
-            resetVariables();
-            isNextLevelLoaded = true;
+                resetVariables();
+                isNextLevelLoaded = true;
+                PlayerStatus.Instance.ResetStatus();
+            }
+            else
+            {
+                StartCoroutine(HandleFinalLevel());
+            }
         }
         else
         {
             isNextLevelLoaded = false;
             return;
         }
-
-        PlayerStatus.Instance.ResetStatus();
     }
 
     public void SetCompleteLevel(bool isCompleted)
@@ -79,6 +84,10 @@ public class LevelManager : MonoBehaviour
     {
         return levelPrefabs[levelIndex].levelCompleted;
     }
+    public bool IsLastLevel()
+    {
+        return levelIndex == levelPrefabs.Count - 1;
+    }
     private void RestartLevel()
     {
         if (levelIndex > levelPrefabs.Count)
@@ -101,4 +110,17 @@ public class LevelManager : MonoBehaviour
         LevelTasksCompleted();
     }
     public MemorySO GetMemory() => listOfMemory[levelIndex];
+
+    private IEnumerator HandleFinalLevel()
+    {
+        yield return ScreenFade.Instance.FadeToBlack();
+
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            player.SetActive(false);
+        }
+
+        MemoriesManager.Instance.StartMemorySequence();
+    }
 }

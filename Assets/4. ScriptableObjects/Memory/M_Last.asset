@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b9551e3ae9f794db28e6189b33f6c5, type: 3}
   m_Name: M_Last
   m_EditorClassIdentifier: 
-  listOfMemories:
-  - {fileID: 2251490224083810846, guid: 80fbb3c102d2e7142818e71ceacde7a1, type: 3}
-  - {fileID: 2251490224083810846, guid: 73cb7e2f124980746beacccb99514d62, type: 3}
-  - {fileID: 2251490224083810846, guid: a7bae3c36d8a5804b8e342c58914fd53, type: 3}
-  - {fileID: 2251490224083810846, guid: 315b723654b96b849a81b20065d0930a, type: 3}
-  numOfKeys: 00000000
+  listOfMemories: []
+  numOfKeys: 
+  isFinalMemory: 1
+  successObject: {fileID: 7822558247312965958, guid: 5095a54c7019a4743af59b4b20ca8ce3, type: 3}
+  failureObject: {fileID: 7220045791974381095, guid: 0c919bf9d5aa5b74aa27ae199b0d4028, type: 3}
