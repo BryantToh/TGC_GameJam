@@ -13,7 +13,7 @@ public class MemoriesManager : MonoBehaviour
     private float fadeDuration = 1.5f;
     [SerializeField] private float delayBetweenMemories = 2f;
     [SerializeField] private List<GameObject> memoryPrefabs = new List<GameObject>();
-
+    [SerializeField] private PlayerStatus status;
     private List<GameObject> spawnedMemories = new List<GameObject>();
 
     private void Awake()
@@ -33,8 +33,9 @@ public class MemoriesManager : MonoBehaviour
 
     private void Update()
     {
-        if (/*Input.GetKeyDown(KeyCode.P)*/LevelManager.Instance.GetCurrLevel() > 2 && LevelManager.Instance.IsLevelCompleted())
+        if (LevelManager.Instance.GetCurrLevel() >= 2 && (LevelManager.Instance.IsLevelCompleted()|| status.GetCurrentHealth() <= 0f))
         {
+            Debug.Log("asdasd");
             CanShowMemoryPanels();
         }
     }

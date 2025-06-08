@@ -6,6 +6,7 @@ public class EndingImages : MonoBehaviour
     [SerializeField] private GameObject badEndImage;
     [SerializeField] private GameObject goodEndImage;
     [SerializeField] private GameObject fade;
+    [SerializeField] private PlayerStatus status;
     bool imageSpawned = false;
     private void Start()
     {
@@ -15,6 +16,13 @@ public class EndingImages : MonoBehaviour
     private void Update()
     {
         MemoriesManager.Instance.OnMemorySequenceComplete += MemorySequenceFinished;
+
+        if (!LevelManager.Instance.IsLevelCompleted() && LevelManager.Instance.GetCurrLevel() == 2 && !imageSpawned && MemoriesManager.Instance.allShown/*status.gameObject.transform.position.y < -42f*/)
+        {
+            imageSpawned = true;
+            fade.SetActive(false);
+            badEndImage.SetActive(true);
+        }
     }
     private void MemorySequenceFinished()
     {
@@ -24,11 +32,6 @@ public class EndingImages : MonoBehaviour
             fade.SetActive(false);
             goodEndImage.SetActive(true);
         }
-        else if (!LevelManager.Instance.IsLevelCompleted() && LevelManager.Instance.GetCurrLevel() == 2 && !imageSpawned && MemoriesManager.Instance.allShown)
-        {
-            imageSpawned = true;
-            fade.SetActive(false);
-            badEndImage.SetActive(true);
-        }
+        
     }
 }
