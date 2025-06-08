@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     private int levelIndex = 0;
     private bool isNextLevelLoaded = false;
     private GameObject currentLevel;
+    [SerializeField] private PlayerStatus player;
     [SerializeField] List<LevelSO> levelPrefabs = new List<LevelSO>();
     [SerializeField] List<MemorySO> listOfMemory = new List<MemorySO>();
     private void Awake()
@@ -31,11 +32,10 @@ public class LevelManager : MonoBehaviour
             levelPrefabs[i].levelCompleted = false;
         }
         ActiveLevelPrefab(levelIndex);
-
     }
     public void LoadNextLevel()
     {
-        if (levelIndex < levelPrefabs.Count && levelPrefabs[levelIndex].levelCompleted)
+        if (levelIndex < levelPrefabs.Count && (levelPrefabs[levelIndex].levelCompleted || player.GetCurrentHealth() <= 0f))
         {
             levelIndex++;
 
@@ -58,7 +58,16 @@ public class LevelManager : MonoBehaviour
             return;
         }
     }
+    public bool CheckprevLevel()
+    {
+        //if (levelIndex <= 0)
+        //    return;
 
+        if (levelPrefabs[levelIndex - 1].levelCompleted && levelIndex > 0)
+            return true;
+        else
+            return false;
+    }
     public void SetCompleteLevel(bool isCompleted)
     {
         levelPrefabs[levelIndex].levelCompleted = isCompleted;
