@@ -824,6 +824,10 @@ PrefabInstance:
       value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: status
+      value: 
+      objectReference: {fileID: 2142657984}
+    - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: memorySO
       value: 
       objectReference: {fileID: 11400000, guid: 9eb1973b102abe5438a0c07616dfb330, type: 2}
@@ -2333,6 +2337,7 @@ MonoBehaviour:
   badEndImage: {fileID: 1992558933}
   goodEndImage: {fileID: 269299710}
   fade: {fileID: 1930029818}
+  status: {fileID: 0}
 --- !u!1 &1930029818
 GameObject:
   m_ObjectHideFlags: 0
