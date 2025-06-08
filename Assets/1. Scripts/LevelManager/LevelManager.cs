@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
+                PlayerStatus.Instance.ResetStatus();
                 StartCoroutine(HandleFinalLevel());
             }
         }
