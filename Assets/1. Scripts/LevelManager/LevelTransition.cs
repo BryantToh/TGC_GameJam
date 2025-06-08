@@ -9,6 +9,8 @@ public class LevelTransition : MonoBehaviour
     [SerializeField] float sliderDuration;
     [SerializeField] GameObject levelTransitionObj, transitionBG;
     [SerializeField] PlayerStatus status;
+
+    private bool hasTransitionStarted = false;
     private void Start()
     {
         HideAll();
@@ -16,13 +18,18 @@ public class LevelTransition : MonoBehaviour
 
     void Update()
     {
-        if ((LevelManager.Instance.IsLevelCompleted() || status.GetCurrentHealth() <= 0f ) && !LevelManager.Instance.IsLastLevel())
+        if (hasTransitionStarted || LevelManager.Instance.IsLastLevel())
+            return;
+
+        if ((LevelManager.Instance.IsLevelCompleted() || status.GetCurrentHealth() <= 0f))
         {
+            hasTransitionStarted = true;
             AudioManager.instance.PlaySFX("nextlevel", 0.5f);
             levelTransitionObj.SetActive(true);
             transitionBG.SetActive(true);
             LevelTransitionSlider();
         }
+
     }
 
     private void LevelTransitionSlider()
@@ -53,8 +60,14 @@ public class LevelTransition : MonoBehaviour
             slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, elapsed / sliderDuration);
             yield return null;
         }
-        LevelManager.Instance.LoadNextLevel();
+
+        LevelManager.Instance.LoadNextLevel(); // this may lead to memory sequence
+
         HideAll();
         levelSlider1.value = 1f;
+
+        // Only reset if it's not the last level
+        if (!LevelManager.Instance.IsLastLevel())
+            hasTransitionStarted = false;
     }
 }

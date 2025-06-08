@@ -35,7 +35,10 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        if (levelIndex < levelPrefabs.Count && (levelPrefabs[levelIndex].levelCompleted || player.GetCurrentHealth() <= 0f))
+        Debug.Log($"[LoadNextLevel] Current Index: {levelIndex}, Total Levels: {levelPrefabs.Count}");
+
+        if (levelIndex < levelPrefabs.Count &&
+            (levelPrefabs[levelIndex].levelCompleted || player.GetCurrentHealth() <= 0f))
         {
             levelIndex++;
 
@@ -57,6 +60,7 @@ public class LevelManager : MonoBehaviour
             isNextLevelLoaded = false;
             return;
         }
+
     }
     public bool CheckprevLevel()
     {
@@ -92,6 +96,12 @@ public class LevelManager : MonoBehaviour
     }
     public bool IsLevelCompleted()
     {
+        if (levelIndex < 0 || levelIndex >= levelPrefabs.Count)
+        {
+            Debug.LogWarning("IsLevelCompleted: Level index out of bounds!");
+            return false;
+        }
+
         return levelPrefabs[levelIndex].levelCompleted;
     }
     public bool IsLastLevel()
