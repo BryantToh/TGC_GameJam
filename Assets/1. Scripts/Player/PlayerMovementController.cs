@@ -24,7 +24,7 @@ public class PlayerMovementController : MonoBehaviour
     [Header("GroundCheck")]
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2(0.49f, 0.03f);
-    public LayerMask groundLayer;
+    private LayerMask groundLayer;
     private bool isGrounded;
 
     [Header("Wall Check")]
@@ -59,6 +59,11 @@ public class PlayerMovementController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerStatus = GetComponent<PlayerStatus>();
+    }
+
+    private void Start()
+    {
+        groundLayer = LayerMask.GetMask("Ground", "Wall");
     }
     public void FrameUpdate()
     {
@@ -177,12 +182,18 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (!isGrounded && WallCheck() && horizontalMovement != 0)
         {
+            if (!isWallSliding)
+            {
+                jumpsRemaining = maxJumps;
+            }
+
             isWallSliding = true;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -wallSlideSpeed));
-
         }
         else
+        {
             isWallSliding = false;
+        }
     }
 
     private void ProcessWallJump()
