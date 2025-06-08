@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8537593089650741281}
   - component: {fileID: 6653998884464880803}
   - component: {fileID: 2016504852682988227}
+  - component: {fileID: 8174430453591730768}
   m_Layer: 0
   m_Name: Boar
   m_TagString: Untagged
@@ -238,7 +239,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseRange: 5
+  damage: 20
   movementSpeed: 7
+  attackRange: 2
+  attackTime: 3
   canReturnToIdle: 0
 --- !u!61 &2016504852682988227
 BoxCollider2D:
@@ -286,3 +290,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.375, y: 1.4375}
   m_EdgeRadius: 0
+--- !u!114 &8174430453591730768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221421344042644603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7613ef20f04ede342b7564e48c8ca18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

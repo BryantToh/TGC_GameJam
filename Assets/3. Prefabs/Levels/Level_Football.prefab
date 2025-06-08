@@ -12608,8 +12608,8 @@ MonoBehaviour:
   transitionLight: {fileID: 1354410702189018820}
   playerObj: {fileID: 0}
   transitionPoint: {fileID: 4533722865416210635}
-  increaseDuration: 4
-  decreaseDuration: 2
+  increaseDuration: 2.5
+  decreaseDuration: 1.5
 --- !u!1 &2711461124574862803
 GameObject:
   m_ObjectHideFlags: 0

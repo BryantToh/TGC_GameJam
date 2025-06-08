@@ -18,4 +18,8 @@ public class Dog : Animal
         anim.SetBool("canChase", true);
         base.ChaseState();
     }
+    protected override void AttackState()
+    {
+        base.AttackState();
+    }
 }

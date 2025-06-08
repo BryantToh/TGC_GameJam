@@ -677,11 +677,11 @@ PrefabInstance:
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
+      objectReference: {fileID: 11400000, guid: 4835e56ce982111418e1239dd7bcf3ca, type: 2}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4835e56ce982111418e1239dd7bcf3ca, type: 2}
+      objectReference: {fileID: 11400000, guid: 308f2f27304ccc14c888a20fdaf319be, type: 2}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[2]'
       value: 
@@ -919,7 +919,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &841394814
 GameObject:
