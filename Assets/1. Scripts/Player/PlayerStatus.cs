@@ -122,7 +122,7 @@ public class PlayerStatus : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player has died.");
-        // Add your death logic here
+        //LevelManager.Instance.LoadNextLevel();
     }
 
     public float GetCurrentHealth() => currentHealth;

@@ -712,6 +712,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1101673033}
     m_Modifications:
     - target: {fileID: 1941754445594256388, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: status
+      value: 
+      objectReference: {fileID: 2142657984}
+    - target: {fileID: 1941754445594256388, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: levelSlider1
       value: 
       objectReference: {fileID: 52761642}
@@ -763,6 +767,10 @@ PrefabInstance:
       propertyPath: 'memoryPrefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 2251490224083810846, guid: 80fbb3c102d2e7142818e71ceacde7a1, type: 3}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2142657984}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: levelPrefabs.Array.size
       value: 3
