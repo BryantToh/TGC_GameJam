@@ -753,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9eb1973b102abe5438a0c07616dfb330, type: 2}
     - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: memoryPrefabs.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'memoryPrefabs.Array.data[0]'
@@ -774,6 +774,10 @@ PrefabInstance:
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: levelPrefabs.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: listOfMemory.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'levelPrefabs.Array.data[0]'
@@ -2034,6 +2038,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3796579379130599495, guid: bc27b0f222e9dce499e747cd88e200c9, type: 3}
+      propertyPath: listOfBGAudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796579379130599495, guid: bc27b0f222e9dce499e747cd88e200c9, type: 3}
+      propertyPath: 'listOfBGAudioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a244f980c065cb14aa6360cb3fc16a6c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
