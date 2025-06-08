@@ -8,7 +8,6 @@ public class LevelTransition : MonoBehaviour
     [SerializeField] Slider levelSlider1, levelSlider2;
     [SerializeField] float sliderDuration;
     [SerializeField] GameObject levelTransitionObj, transitionBG;
-    [SerializeField] PlayerStatus status;
     private void Start()
     {
         HideAll();
@@ -16,7 +15,7 @@ public class LevelTransition : MonoBehaviour
 
     void Update()
     {
-        if ((LevelManager.Instance.IsLevelCompleted() || status.GetCurrentHealth() <= 0f ) && !LevelManager.Instance.IsLastLevel())
+        if (LevelManager.Instance.IsLevelCompleted() && !LevelManager.Instance.IsLastLevel())
         {
             AudioManager.instance.PlaySFX("nextlevel", 0.5f);
             levelTransitionObj.SetActive(true);
