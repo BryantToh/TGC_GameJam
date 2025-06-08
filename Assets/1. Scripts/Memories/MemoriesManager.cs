@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 public class MemoriesManager : MonoBehaviour
 {
     public static MemoriesManager Instance;
+    public System.Action OnMemorySequenceComplete;
+    public bool allShown = false;
     private float fadeDuration = 1.5f;
     [SerializeField] private float delayBetweenMemories = 2f;
     [SerializeField] private List<GameObject> memoryPrefabs = new List<GameObject>();
@@ -61,15 +64,13 @@ public class MemoriesManager : MonoBehaviour
             {
                 child.gameObject.SetActive(true);
                 Image[] images = child.GetComponentsInChildren<Image>(true);
-                 
+
                 foreach (Image img in images)
                 {
                     img.gameObject.SetActive(true);
-
                     Color tempColor = img.color;
                     tempColor.a = 0f;
                     img.color = tempColor;
-
                     imagesToFade.Add(img);
                 }
             }
@@ -84,7 +85,13 @@ public class MemoriesManager : MonoBehaviour
 
             Destroy(memoryInstance);
         }
+
+        yield return null;
+
+        OnMemorySequenceComplete?.Invoke();
+        allShown = true;
     }
+
 
     private IEnumerator FadeImagesOrder(List<Image> images)
     {
