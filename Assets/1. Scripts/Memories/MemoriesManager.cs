@@ -1,7 +1,5 @@
-using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,32 +8,31 @@ public class MemoriesManager : MonoBehaviour
     public static MemoriesManager Instance;
     public System.Action OnMemorySequenceComplete;
     public bool allShown = false;
+
     private float fadeDuration = 1.5f;
     [SerializeField] private float delayBetweenMemories = 2f;
     [SerializeField] private List<GameObject> memoryPrefabs = new List<GameObject>();
     [SerializeField] private PlayerStatus status;
+
     private List<GameObject> spawnedMemories = new List<GameObject>();
+    private bool memoryStarted = false; 
 
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
             Destroy(gameObject);
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
-        if (LevelManager.Instance.GetCurrLevel() >= 2 && (LevelManager.Instance.IsLevelCompleted()|| status.GetCurrentHealth() <= 0f))
+        if (!memoryStarted &&
+            LevelManager.Instance.GetCurrLevel() >= 2 &&
+            (LevelManager.Instance.IsLevelCompleted() || status.GetCurrentHealth() <= 0f))
         {
-            Debug.Log("asdasd");
+            Debug.Log("Starting memory panel sequence");
+            memoryStarted = true;
             CanShowMemoryPanels();
         }
     }
@@ -45,14 +42,23 @@ public class MemoriesManager : MonoBehaviour
         StartCoroutine(DisplayMemories());
     }
 
-
     public void StartMemorySequence()
     {
-        StartCoroutine(DisplayMemories());
+        if (!memoryStarted)
+        {
+            memoryStarted = true;
+            StartCoroutine(DisplayMemories());
+        }
     }
 
     private IEnumerator DisplayMemories()
     {
+        yield return new WaitForSeconds(1f);
+
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+            player.SetActive(false);
+
         foreach (GameObject prefab in memoryPrefabs)
         {
             GameObject memoryInstance = Instantiate(prefab, transform);
@@ -79,20 +85,15 @@ public class MemoriesManager : MonoBehaviour
             memoryInstance.SetActive(true);
 
             yield return StartCoroutine(FadeImagesOrder(imagesToFade));
-
             yield return new WaitForSeconds(delayBetweenMemories);
-
             yield return StartCoroutine(FadeImagesOut(imagesToFade));
 
             Destroy(memoryInstance);
         }
 
-        yield return null;
-
         OnMemorySequenceComplete?.Invoke();
         allShown = true;
     }
-
 
     private IEnumerator FadeImagesOrder(List<Image> images)
     {
