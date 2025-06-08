@@ -6,11 +6,22 @@ using UnityEngine.UI;
 
 public class MemoriesManager : MonoBehaviour
 {
+    public static MemoriesManager Instance;
     private float fadeDuration = 1.5f;
     [SerializeField] private float delayBetweenMemories = 2f;
     [SerializeField] private List<GameObject> memoryPrefabs = new List<GameObject>();
 
     private List<GameObject> spawnedMemories = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -30,6 +41,12 @@ public class MemoriesManager : MonoBehaviour
         StartCoroutine(DisplayMemories());
     }
 
+
+    public void StartMemorySequence()
+    {
+        StartCoroutine(DisplayMemories());
+    }
+
     private IEnumerator DisplayMemories()
     {
         foreach (GameObject prefab in memoryPrefabs)
@@ -44,7 +61,7 @@ public class MemoriesManager : MonoBehaviour
             {
                 child.gameObject.SetActive(true);
                 Image[] images = child.GetComponentsInChildren<Image>(true);
-
+                 
                 foreach (Image img in images)
                 {
                     img.gameObject.SetActive(true);
