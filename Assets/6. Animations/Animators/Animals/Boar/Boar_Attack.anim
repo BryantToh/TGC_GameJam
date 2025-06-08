@@ -90,4 +90,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.25
+    functionName: Hitplayer
+    data: 
+    objectReferenceParameter: {fileID: 7221421344042644603, guid: b0cc76b051e35184d8dd2f4f743cc5f4, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
