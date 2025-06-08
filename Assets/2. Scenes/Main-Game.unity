@@ -665,11 +665,15 @@ PrefabInstance:
     - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'memoryPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3230568653144459353, guid: 8a514e897ddf1744bb02f7a3328f6210, type: 3}
+      objectReference: {fileID: 3230568653144459353, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
     - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'memoryPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 3230568653144459353, guid: 36073ea0d4bb5274fa723fc5876ca247, type: 3}
+      objectReference: {fileID: 3230568653144459353, guid: 8a514e897ddf1744bb02f7a3328f6210, type: 3}
+    - target: {fileID: 5711148655286558801, guid: 355620a679d852741be13d0c626d350f, type: 3}
+      propertyPath: 'memoryPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3230568653144459353, guid: 8832cda9a2d64184aa5bbdb41ae68970, type: 3}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: levelPrefabs.Array.size
       value: 3
@@ -689,11 +693,11 @@ PrefabInstance:
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'listOfMemory.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 380763446b555444d92c40361984410b, type: 2}
+      objectReference: {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
     - target: {fileID: 7648024302230443159, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: 'listOfMemory.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: bbfad9dccabf932488cff3bf578780f3, type: 2}
+      objectReference: {fileID: 11400000, guid: 380763446b555444d92c40361984410b, type: 2}
     - target: {fileID: 7726273820850047476, guid: 355620a679d852741be13d0c626d350f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2235,6 +2239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ==PLAYER==
       objectReference: {fileID: 0}
+    - target: {fileID: 3967305418264331522, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4201929174302085336, guid: 8a89c9cbca0f64549a149c38f655d41d, type: 3}
       propertyPath: wallJumpPower.x
       value: 15
@@ -2278,6 +2286,6 @@ SceneRoots:
   - {fileID: 2076001413}
   - {fileID: 834147829}
   - {fileID: 1822985888}
-  - {fileID: 1424398518}
   - {fileID: 445695771}
+  - {fileID: 1424398518}
   - {fileID: 1796876144}
