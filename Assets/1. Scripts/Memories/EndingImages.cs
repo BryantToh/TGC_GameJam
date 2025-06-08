@@ -26,7 +26,7 @@ public class EndingImages : MonoBehaviour
     }
     private void MemorySequenceFinished()
     {
-        if (MemoriesManager.Instance.allShown && !imageSpawned && LevelManager.Instance.IsLevelCompleted() && LevelManager.Instance.GetCurrLevel() == 2)
+        if (/*MemoriesManager.Instance.allShown && */!imageSpawned && LevelManager.Instance.IsLevelCompleted() && LevelManager.Instance.GetCurrLevel() == 2)
         {
             imageSpawned = true;
             fade.SetActive(false);
